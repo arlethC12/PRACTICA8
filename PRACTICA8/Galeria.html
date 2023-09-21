@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <title>Galeria</title>
+</head>
+<body>
+    <div id="encabezado">
+        <div id="tituloTienda">SANIYE</div>
+        <div id="menu">
+            <ul>
+                <li> <a href="index.html" target="Pagina principal">Inicio</a></li>
+                <li><a href="nosotros.html" title="Descripcion del negocio">Nosotros</a></li>
+                <li><a href="nuestrosproductos.html" title="Catalogo">Nuestros productos</a></li>
+                <li><a href="Galeria.html" title="Fotos">Galeria</a></li>
+                <li><a href="contacto.html" title="Nuestros datos">Contacto</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="areaPrincipal">
+        <div id="datos">
+            <center><h1>GALERÍA</h1></center>
+            <div id="carrusel">
+                <div class="imagenCarrusel">
+                    <img src="https://static.wixstatic.com/media/2df165_aebf73478e9b46b28b26a1bcbf8eb632~mv2.jpg/v1/fill/w_477,h_363,al_c,q_80,usm_0.66_1.00_0.01/121131292_1794466160728449_6106196875989.jpg" alt="Imagen 1">
+                </div>
+                <div class="imagenCarrusel">
+                    <img src="https://i.ytimg.com/vi/-n4FfEL5M0Q/maxresdefault.jpg" alt="Imagen 2">
+                </div>
+                <div class="imagenCarrusel">
+                    <img src="https://lh3.googleusercontent.com/SaZXvVD2Ds7as0ZMbvhv4MDmaukdVlKfwvDvYA6Lzfiq9zXIixCggR3oxrRoq7AEOyEMpZzYFU6qXeM4zg=w768-h768-n-o-v1" alt="Imagen 3">
+                </div>
+            </div>
+            
+            <!-- Agrega el video de YouTube debajo del carrusel -->
+            <div id="video">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/m1FyuKEs1lE" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Inicializa el carrusel
+            var currentIndex = 0;
+            var slides = $('.imagenCarrusel');
+            var totalSlides = slides.length;
+
+            // Función para mostrar la siguiente diapositiva
+            function showNextSlide() {
+                slides.eq(currentIndex).fadeOut();
+                currentIndex = (currentIndex + 1) % totalSlides;
+                slides.eq(currentIndex).fadeIn();
+            }
+
+            // Mostrar la primera diapositiva al cargar la página
+            slides.hide();
+            slides.eq(currentIndex).show();
+
+            // Cambiar de diapositiva cada 3 segundos
+            setInterval(showNextSlide, 3000); // Cambia el valor 3000 para ajustar la velocidad en milisegundos (en este caso, 3 segundos).
+        });
+    </script>
+</body>
+</html>
